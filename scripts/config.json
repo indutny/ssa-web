@@ -1,0 +1,226 @@
+{
+  "registers": [
+    "rax",
+    "rbx",
+    "rcx",
+    "rdx",
+    "r8",
+    "r9",
+    "r10",
+    "r11",
+    "r12",
+    "r13",
+    "r14"
+  ],
+  "instructions": {
+    "literal": {
+      "inputs": [
+        {
+          "type": "js"
+        }
+      ]
+    },
+    "loadProperty": {
+      "inputs": [
+        {
+          "type": "register"
+        },
+        {
+          "type": "register"
+        }
+      ]
+    },
+    "storeProperty": {
+      "output": null,
+      "inputs": [
+        {
+          "type": "register"
+        },
+        {
+          "type": "register"
+        },
+        {
+          "type": "register"
+        }
+      ]
+    },
+    "deleteProperty": {
+      "inputs": [
+        {
+          "type": "register"
+        },
+        {
+          "type": "register"
+        }
+      ]
+    },
+    "loadGlobal": {
+      "inputs": [
+        {
+          "type": "js"
+        }
+      ]
+    },
+    "storeGlobal": {
+      "output": null,
+      "inputs": [
+        {
+          "type": "js"
+        },
+        {
+          "type": "register"
+        }
+      ]
+    },
+    "deleteGlobal": {
+      "inputs": [
+        {
+          "type": "js"
+        }
+      ]
+    },
+    "loadContext": {
+      "inputs": [
+        {
+          "type": "js"
+        },
+        {
+          "type": "js"
+        }
+      ]
+    },
+    "storeContext": {
+      "output": null,
+      "inputs": [
+        {
+          "type": "js"
+        },
+        {
+          "type": "js"
+        },
+        {
+          "type": "register"
+        }
+      ]
+    },
+    "binary": {
+      "output": {
+        "type": "register"
+      },
+      "inputs": [
+        {
+          "type": "js"
+        },
+        {
+          "type": "register"
+        },
+        {
+          "type": "register"
+        }
+      ]
+    },
+    "unary": {
+      "output": {
+        "type": "register"
+      },
+      "inputs": [
+        {
+          "type": "js"
+        },
+        {
+          "type": "register"
+        }
+      ]
+    },
+    "branch": {
+      "output": null,
+      "inputs": [
+        {
+          "type": "register"
+        }
+      ]
+    },
+    "nop": {
+      "inputs": [
+        {
+          "type": "any"
+        }
+      ]
+    },
+    "pushArg": {
+      "output": null,
+      "inputs": [
+        {
+          "type": "any"
+        }
+      ]
+    },
+    "call": {
+      "call": true,
+      "output": {
+        "type": "register",
+        "id": "rax"
+      },
+      "inputs": [
+        {
+          "type": "register"
+        },
+        {
+          "type": "register"
+        },
+        {
+          "type": "js"
+        }
+      ]
+    },
+    "new": {
+      "inputs": [
+        {
+          "type": "register"
+        },
+        {
+          "type": "js"
+        }
+      ]
+    },
+    "array": {
+      "inputs": [
+        {
+          "type": "js"
+        }
+      ]
+    },
+    "object": {
+      "inputs": [
+        {
+          "type": "js"
+        }
+      ]
+    },
+    "ret": {
+      "output": null,
+      "inputs": [
+        {
+          "type": "register"
+        }
+      ]
+    },
+    "fn": {
+      "inputs": [
+        {
+          "type": "js"
+        }
+      ]
+    },
+    "loadArg": {
+      "inputs": [
+        {
+          "type": "js"
+        }
+      ]
+    },
+    "this": {},
+    "self": {},
+    "global": {}
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "ssa-web",
+  "version": "0.0.0",
+  "description": "SSA.js demo website",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "SSA",
+    "Web"
+  ],
+  "author": "Fedor Indutny <fedor@indutny.com>",
+  "license": "MIT",
+  "dependencies": {
+    "browserify": "~3.20.0",
+    "ssa-ir": "~0.2.1",
+    "ssa.js": "~0.1.0",
+    "linearscan": "~0.3.0",
+    "phi.js": "~0.1.2",
+    "esprima": "~1.0.4",
+    "connect": "~2.12.0"
+  }
+}
