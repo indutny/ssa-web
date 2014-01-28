@@ -34,7 +34,7 @@ pipe(inputs.src, inputs.ssa, function(src, cb) {
   try {
     var ast = esprima.parse(src);
     var out = ssa.construct(ast).map(function(cfg) {
-      return ir.stringify(cfg);
+      return ir.stringify(cfg.blocks);
     }).join(boundary);
 
     cb(null, out);
