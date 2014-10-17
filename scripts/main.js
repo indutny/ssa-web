@@ -76,15 +76,15 @@ pipe(inputs.phi, inputs.out, function(src, cb) {
 // Example
 
 inputs.src.val(function() {
-  function run() {
-    var x = 1;
-    for (var i = 0; i < 10; i++) {
-      console.log(i);
-      x += i;
-    }
-    console.log(x);
+function run() {
+  var x = 1;
+  for (var i = 0; i < 10; i++) {
+    console.log(i);
+    x += i;
   }
-  run();
+  console.log(x);
+}
+run();
 }.toString().replace(/^function.*{\n|\n}$/g, ''));
 
 inputs.src.trigger('keyup');
