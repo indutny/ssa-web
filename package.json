@@ -15,7 +15,7 @@
   "dependencies": {
     "browserify": "~3.20.0",
     "ssa-ir": "~0.3.0",
-    "ssa.js": "~0.5.0",
+    "ssa.js": "~0.6.0",
     "linearscan": "~0.3.4",
     "phi.js": "~0.1.4",
     "esprima": "~1.2.2",
