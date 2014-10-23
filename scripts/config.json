@@ -57,6 +57,9 @@
     "loadGlobal": {
       "inputs": [
         {
+          "type": "js",
+        },
+        {
           "type": "register"
         }
       ]
@@ -64,6 +67,9 @@
     "storeGlobal": {
       "output": null,
       "inputs": [
+        {
+          "type": "js",
+        },
         {
           "type": "register"
         },
