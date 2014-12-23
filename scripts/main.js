@@ -1,7 +1,7 @@
 var esprima = require('esprima');
+var cfg = require('cfg.js');
 var ssa = require('ssa.js');
-var ir = require('ssa-ir');
-var phi = require('phi.js');
+var ir = require('cfg-ir');
 var ls = require('linearscan');
 var config = require('./config.json');
 
@@ -9,8 +9,8 @@ ls = ls.create(config);
 
 var inputs = {
   src: $('#src'),
+  cfg: $('#cfg'),
   ssa: $('#ssa'),
-  phi: $('#phi'),
   out: $('#out')
 };
 
@@ -30,10 +30,10 @@ function pipe(from, to, transform) {
 
 var boundary = '# function split #\n';
 
-pipe(inputs.src, inputs.ssa, function(src, cb) {
+pipe(inputs.src, inputs.cfg, function(src, cb) {
   try {
     var ast = esprima.parse(src);
-    var out = ssa.construct(ast).map(function(cfg) {
+    var out = cfg.construct(ast).map(function(cfg) {
       return ir.stringify(cfg);
     }).join(boundary);
 
@@ -53,9 +53,9 @@ function mapIR(src, fn) {
   }).join(boundary);
 }
 
-pipe(inputs.ssa, inputs.phi, function(src, cb) {
+pipe(inputs.cfg, inputs.ssa, function(src, cb) {
   try {
-    var out = mapIR(src, phi.run.bind(phi));
+    var out = mapIR(src, ssa.run.bind(ssa));
 
     cb(null, out);
   } catch (e) {
@@ -63,7 +63,7 @@ pipe(inputs.ssa, inputs.phi, function(src, cb) {
   }
 });
 
-pipe(inputs.phi, inputs.out, function(src, cb) {
+pipe(inputs.ssa, inputs.out, function(src, cb) {
   try {
     var out = mapIR(src, ls.run.bind(ls));
 
